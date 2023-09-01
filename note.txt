@@ -1,0 +1,23 @@
+y=ax+b
+
+f(x) = ax+b
+
+Donne des params random 
+
+fonction cout 
+	Calcul les erreurs possible dans le dataset
+
+
+Dnas notre cas
+
+Reliations entre le Km et le prix au Km
+
+
+Etape 1 Open le file est recup les datas 
+
+## Check si j'ai besoin de trier les datas
+
+Faire un nuages a point des ces datas
+
+
+Trouver les valeurs 
