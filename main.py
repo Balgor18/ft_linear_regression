@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 from sklearn.datasets import make_regression
 
-matplotlib.use('MacOSX')
+# matplotlib.use('MacOSX')
 
 FILENAME="data.csv"
 DEBUG=0
