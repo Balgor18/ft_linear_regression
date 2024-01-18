@@ -1,2 +1,0 @@
-Faire une class pour linear_regression
-https://www.youtube.com/watch?v=_b_50uILuok&t=3s
