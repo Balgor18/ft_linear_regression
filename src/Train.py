@@ -86,27 +86,27 @@ def main():
     model.normal[KM] = model.normalize(model.default[KM])
     model.normal[PRICE] = model.normalize(model.default[PRICE])
 
-    plt.subplot(2, 2, 1)
-    plt.scatter(model.default[KM], model.default[PRICE])
-    plt.title('Before normalization')
+    # plt.subplot(2, 2, 1)
+    # plt.scatter(model.default[KM], model.default[PRICE])
+    # plt.title('Before normalization')
 
-    plt.subplot(2, 2, 2)
-    plt.scatter(model.normal[KM], model.normal[PRICE])
-    plt.title('After normalization')
+    # plt.subplot(2, 2, 2)
+    # plt.scatter(model.normal[KM], model.normal[PRICE])
+    # plt.title('After normalization')
 
-    plt.subplot(2, 2, 3)
-    plt.scatter(model.normal[KM], model.normal[PRICE])
-    plt.title('Training')
+    # plt.subplot(2, 2, 3)
+    # plt.scatter(model.normal[KM], model.normal[PRICE])
+    # plt.title('Training')
 
     model.WhileTrain()
 
     print(f"theta0 : [{model.denormTheta[0]}], theta1 : [{model.denormTheta[1]}]")
 
-    plt.subplot(2, 2, 4)
-    plt.title('Linear regression')
-    plt.scatter(model.default[KM], model.default[PRICE])
-    plt.plot(model.default[KM], [model.denormTheta[0] + (model.denormTheta[1] * x) for x in model.default[KM]], color='red')
-    plt.show()
+    # plt.subplot(2, 2, 4)
+    # plt.title('Linear regression')
+    # plt.scatter(model.default[KM], model.default[PRICE])
+    # plt.plot(model.default[KM], [model.denormTheta[0] + (model.denormTheta[1] * x) for x in model.default[KM]], color='red')
+    # plt.show()
 
 if __name__ == '__main__':
     main()
