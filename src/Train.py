@@ -13,6 +13,11 @@ class LinearRegression:
         self.default : Tuple[int, int] = [0, 0] # Init des data de depart
         self.normal : Tuple[int, int] = [0, 0] # Init des datas apres normalisation
 
+    def _saveTheta(self) :
+        new_csv = pd.DataFrame({'theta0': [self.denormTheta[KM]], 'theta1': [self.denormTheta[PRICE]]})
+        new_csv.to_csv('theta.csv', index=False)
+        print("Theta Save in file theta.csv")
+
     def normalize(self, dataset : List) -> List:
         """Normalize a data pass in param
 
@@ -57,6 +62,7 @@ class LinearRegression:
             self.theta = new
             plt.plot(self.normal[KM], [self.theta[0] + (self.theta[1] * x) for x in self.normal[KM]], alpha=0.1)
         self.denormTheta = self.denormalize(self.theta, [self.default[KM], self.default[PRICE]])
+        self._saveTheta()
 
 def file() -> Tuple[List[int], List[int]]:
     """Open the CSV or a error if not found
@@ -99,8 +105,6 @@ def main():
     # plt.title('Training')
 
     model.WhileTrain()
-
-    print(f"theta0 : [{model.denormTheta[0]}], theta1 : [{model.denormTheta[1]}]")
 
     # plt.subplot(2, 2, 4)
     # plt.title('Linear regression')
