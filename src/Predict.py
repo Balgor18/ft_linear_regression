@@ -74,3 +74,4 @@ if __name__ == "__main__":
             precision_calculation(theta)
     except Exception as e:
         print(style.red("Error: ", e), file=sys.stderr)
+        exit(1)
