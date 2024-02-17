@@ -3,6 +3,7 @@ import style
 from typing import Tuple
 from sklearn.metrics import r2_score
 import pandas as pd
+import os
 
 def predict(theta : Tuple[float], mileage : int) -> int:
     """Predict function
@@ -64,12 +65,9 @@ if __name__ == "__main__":
 
     try:
         theta : Tuple[float] = [0, 0]
-        try:
+        if os.path.exists('theta.csv'):
             data = pd.read_csv('theta.csv')
             theta = [float(x) for x in data.values[0]]
-        except:
-            print("Error: You must train the model first")
-            exit(1)
         value = (int(input("Enter mileage: ")))
         print("Estimated price: ", predict(theta, value))
         if (input("precision of the model? (y/n): ") == 'y'):
